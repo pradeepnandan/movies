@@ -1,0 +1,19 @@
+
+
+{% extends 'header.html' %}
+{% block body %}
+<!--***************BODY*****************-->
+{% for i in moviekey %}
+{{i.id}}--->{{i.mname}}-->{{i.desc}}--><img src="{{i.img.url}}"><br>
+{% endfor %}
+
+<h2>Movies details  from link</h2>
+{% for i in moviekey %}
+<!--<a href="movies/{{i.id}}/">{{i.mname}}<br></a>-->
+<a href="{% url 'details1' i.id %}">{{i.mname}} </a><br>
+
+{% endfor %}
+<!--********************************-->
+{% endblock %}
+
+

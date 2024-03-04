@@ -1,0 +1,7 @@
+{% extends 'header.html' %}
+{% block body %}
+
+<img src="{{movie_key.img.url}}"<br>
+{{movie_key.desc}}
+<a class="btn btn-warning" href="{% url 'movieapp:update' movie_key.id %}">Update</a>>
+{% endblock %}

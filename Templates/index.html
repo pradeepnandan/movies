@@ -1,0 +1,39 @@
+
+
+{% extends 'header.html' %}
+{% block body %}
+<!--***************BODY*****************-->
+
+<div class=" row  bg-primary-subtle ">
+{% for i in moviekey %}
+
+  <div class="col-sm-2 mb-3 mb-sm-0">
+    <div class="card" style="width: 12rem;">
+      <img src="{{i.img.url}}" class="card-img-top" alt="..."  width="100px" height="230px">
+      <div class="card-body">
+        <h5><a class ='card-title' href="{% url 'movieapp:details1' i.id %}">{{i.mname}} </a></h5>
+        <!--h5 class="card-title">{{i.mname}}</h5-->
+        <!--p class="card-text">{{i.desc}}</p-->
+          <!--a href="#" class="btn btn-primary">Go somewhere</a-->
+      </div>
+    </div>
+  </div>
+
+
+
+<!--
+{{i.id}}-{{i.mname}}<br> <img src="{{i.img.url}}" width="100"><br>{{i.desc}}<br><span><span-->
+{% endfor %}
+</div>
+
+
+
+
+<a class ='btn btn-primary' href="add">ADD MOVIES</a>
+
+
+
+<!--********************************-->
+{% endblock %}
+
+

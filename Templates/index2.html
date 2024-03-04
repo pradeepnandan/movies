@@ -1,0 +1,36 @@
+
+
+{% extends 'header.html' %}
+{% block body %}
+<!--***************BODY*****************-->
+{% for i in moviekey %}
+<div class="card" style="width: 18rem;">
+  <img src="{{i.img.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{i.mname}}</h5>
+    <p class="card-text">{{i.desc}}</p>
+    <!--a href="#" class="btn btn-primary">Go somewhere</a-->
+  </div>
+</div>
+
+
+
+<!--
+{{i.id}}-{{i.mname}}<br> <img src="{{i.img.url}}" width="100"><br>{{i.desc}}<br><span><span-->
+{% endfor %}
+
+
+
+
+<a class ='btn btn-warning' href="add">ADD MOVIES</a>
+<h2>Movies details  from link</h2>
+{% for i in moviekey %}
+<!--<a href="movies/{{i.id}}/">{{i.mname}}<br></a>-->
+<a href="{% url 'movieapp:details1' i.id %}">{{i.mname}} </a><br>
+
+{% endfor %}
+
+<!--********************************-->
+{% endblock %}
+
+
